@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MvvmImageClient</string>
+    <string name="empty_hint">暂无图片，先下拉刷新试试</string>
+    <string name="image_preview">图片预览</string>
+    <string name="image_meta_format">大小: %1$d bytes</string>
+    <string name="settings">设置</string>
+    <string name="server_config">服务端配置</string>
+    <string name="server_ip">局域网 IP</string>
+    <string name="server_port">端口</string>
+    <string name="save">保存</string>
+    <string name="cancel">取消</string>
+    <string name="server_hint_format">当前服务: %1$s:%2$s</string>
+</resources>
