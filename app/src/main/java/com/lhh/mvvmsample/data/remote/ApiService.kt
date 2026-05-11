@@ -1,12 +1,10 @@
 package com.lhh.mvvmsample.data.remote
 
 import retrofit2.http.GET
-import retrofit2.http.Query
 
 interface ApiService {
 
-    @GET("images")
-    suspend fun getImages(
-        @Query("page") page: Int? = null
-    ): ImagesResponseDto
+    /** 与服务端 `/selected` 一致：仅返回桌面应用里勾选过的图片 */
+    @GET("selected")
+    suspend fun getSelectedImages(): ImagesResponseDto
 }

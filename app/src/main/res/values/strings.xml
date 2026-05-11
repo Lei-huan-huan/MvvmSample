@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">MvvmImageClient</string>
-    <string name="empty_hint">暂无图片，先下拉刷新试试</string>
+    <string name="empty_hint">暂无图片；请在电脑端服务里勾选图片后，下拉刷新</string>
     <string name="image_preview">图片预览</string>
     <string name="image_meta_format">大小: %1$d bytes</string>
     <string name="settings">设置</string>
@@ -10,4 +10,10 @@
     <string name="save">保存</string>
     <string name="cancel">取消</string>
     <string name="server_hint_format">当前服务: %1$s:%2$s</string>
+    <string name="download_selected">下载到相册</string>
+    <string name="select_all">全选</string>
+    <string name="deselect_all">取消全选</string>
+    <string name="viewer_tap_to_select">选择</string>
+    <string name="viewer_selected_label">已选</string>
+    <string name="back">返回</string>
 </resources>

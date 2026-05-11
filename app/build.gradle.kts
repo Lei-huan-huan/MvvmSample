@@ -68,6 +68,7 @@ dependencies {
     implementation(libs.okhttp.logging.interceptor)
 
     implementation(libs.glide)
+    implementation(libs.photoview)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

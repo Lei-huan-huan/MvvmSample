@@ -4,7 +4,6 @@ import com.lhh.mvvmsample.data.local.ImageDao
 import com.lhh.mvvmsample.data.local.ImageEntity
 import com.lhh.mvvmsample.data.mapper.toImageEntityOrNull
 import com.lhh.mvvmsample.data.remote.ApiService
-import com.lhh.mvvmsample.data.remote.ImageItemDto
 import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -25,19 +24,9 @@ class ImageRepositoryImpl @Inject constructor(
 
     override suspend fun refresh() {
         withContext(Dispatchers.IO) {
-            val firstPage = apiService.getImages(page = 1)
-            val allItems = mutableListOf<ImageItemDto>()
-            allItems.addAll(firstPage.items)
-
-            val totalPages = (firstPage.totalPages ?: 1).coerceAtLeast(1)
-            if (totalPages > 1) {
-                for (page in 2..totalPages) {
-                    allItems.addAll(apiService.getImages(page = page).items)
-                }
-            }
-
+            val response = apiService.getSelectedImages()
             val now = System.currentTimeMillis()
-            val entities = allItems
+            val entities = response.items
                 .distinctBy { it.url }
                 .mapNotNull { it.toImageEntityOrNull(now) }
 

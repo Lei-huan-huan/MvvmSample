@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <network-security-config>
-    <domain-config cleartextTrafficPermitted="true">
-        <domain includeSubdomains="false">192.168.49.122</domain>
-    </domain-config>
+    <!-- 仅连接用户配置的局域网 HTTP 服务；放开明文以免换 IP 后无法访问 -->
+    <base-config cleartextTrafficPermitted="true" />
 </network-security-config>
